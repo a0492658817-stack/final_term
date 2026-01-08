@@ -4,7 +4,7 @@ def INPUT():
     ALL=[]
     for i in range(number_of_caves):
         line=input().split()
-        ALL.append(int(k) for k in line)
+        ALL.append([int(k) for k in line])
     return entry_number,bag_weight,ALL
 
 def dfs(cur,cur_value,cur_wight,bag_weight,cave,visited):
@@ -38,4 +38,5 @@ def main():
     visited=set()
     ans=dfs(entry_number,0,0,bag_weight,cave,visited)
     print(ans)
+
 main()
