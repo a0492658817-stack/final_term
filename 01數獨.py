@@ -14,11 +14,11 @@ def is_safe(board,r,c,num):
     for j in range(4):
         if(board[j][c]==num):
             return False
-    block_row=(r//2)*2
-    block_column=(c//2)*2
-    for i in range(block_row,block_row+2):
-        for j in range(block_column,block_column+2):
-            if(board[i][j]==num):
+    block_row = (r // 3) * 3
+    block_col = (c // 2) * 2
+    for i in range(block_row, block_row + 3):
+        for j in range(block_col, block_col + 2):
+            if board[i][j] == num:
                 return False
     return True
 def solve(board):
@@ -38,4 +38,5 @@ def main():
     solve(board)
     for row in board:
         print(*row)
+
 main()
